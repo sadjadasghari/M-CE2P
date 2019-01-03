@@ -16,7 +16,7 @@ from models import Res_CE2P
 from refine import refine
 
 # If False, use MHPv2.0 instead.
-USE_CIHP_DATA = True
+USE_CIHP_DATA = False # True
 # If true, produce colorful label map for better visualization.
 USE_PALETTE   = True
 
@@ -24,7 +24,7 @@ IMG_MEAN = np.array((104.00698793, 116.66876762, 122.67891434),
                     dtype=np.float32)
 
 if USE_CIHP_DATA:
-  DATA_ROOT       = '/home/rantaimu/DataSpace/Dataset/Segmentation/LIP/instance-level_human_parsing' # noqa
+  DATA_ROOT       = '/data/datasets/person_attribute/LIP/LIP' #/instance-level_human_parsing' # noqa
   TASK            = os.path.join(DATA_ROOT, 'Play')
   IMAGE_DIR       = os.path.join(TASK, 'Images')
   IMAGE_LIST_PATH = os.path.join(TASK, 'list.txt')
@@ -35,7 +35,7 @@ if USE_CIHP_DATA:
   GLOBAL_WEIGHTS  = './weights/LIP_global_edge_110000.pth'
   NUM_CLASSES     = 20
 else:
-  DATA_ROOT       = '/home/rantaimu/DataSpace/Dataset/Segmentation/MHP/LV-MHP-v2' # noqa
+  DATA_ROOT       = '/data/datasets/person_attribute/LV-MHP-v2/LV-MHP-v2' # noqa
   TASK            = os.path.join(DATA_ROOT, 'val')
   IMAGE_DIR       = os.path.join(TASK, 'images')
   IMAGE_LIST_PATH = os.path.join(DATA_ROOT, 'list', 'val.txt')
